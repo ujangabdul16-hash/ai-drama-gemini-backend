@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ai-drama-tools-gemini
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: APP_ACCESS_PASSWORD
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.8-flash
